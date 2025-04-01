@@ -25,9 +25,7 @@ pipeline {
     success {
      echo 'Successfully ran'
     }
-
     failure {
-       echo'pipeline failed'
+      subject: 'Build Failed', body: 'Check Jenkins logs.'
     }
-  }
 }

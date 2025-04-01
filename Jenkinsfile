@@ -24,11 +24,11 @@ pipeline {
 
   post {
     success {
-     message: " Successfully ran"
+     message:'Successfully ran'
     }
 
     failure {
-       message: " pipeline failed"
+       message:'pipeline failed'
     }
   }
 }

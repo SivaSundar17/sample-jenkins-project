@@ -7,7 +7,6 @@ pipeline {
         echo'Building the application...'
       }
     }
-  stages {
     stage('Checkout') {
       steps {
         // Checkout code from repository
@@ -32,7 +31,6 @@ pipeline {
         echo 'Deploying the application...'
       }
     }
-  }
   }
 
   post {

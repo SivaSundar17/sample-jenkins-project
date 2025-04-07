@@ -7,6 +7,13 @@ pipeline {
         echo'Building the application...'
       }
     }
+  stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from repository
+                git 'https://your-repository-url.git'
+            }
+        }
     stage('Compile Java') {
       steps {
       // Compile Java file (adjust according to your project structure)

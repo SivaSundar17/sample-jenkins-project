@@ -10,7 +10,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Checkout code from repository
-        git 'https://github.com/SivaSundar17/sample-jenkins-project.git'
+        git branch: 'feature/add-comment', url: 'https://github.com/SivaSundar17/sample-jenkins-project.git'
           }
       }
     stage('Compile Java') {

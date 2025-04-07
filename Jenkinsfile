@@ -16,7 +16,7 @@ pipeline {
     stage('Compile Java') {
       steps {
       // Compile Java file (adjust according to your project structure)
-        sh 'javac HelloWorld.java' // Compiling your Java file
+        bat 'javac HelloWorld.java' // Compiling your Java file
       }
     }
 

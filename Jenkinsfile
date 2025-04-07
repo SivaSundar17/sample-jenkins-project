@@ -5,7 +5,6 @@ pipeline {
     stage(build) {
       steps {
         echo'Building the application...'
-        slackSend channel: '#builds', color: 'good', message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} Started by changes from ${env.GIT_NAME}(<${env.BUILD_URL}|Open>)", teamDomain: 'teamnamehere', tokenCredentialId: 'tokenidhere'
       }
     }
 
@@ -24,11 +23,10 @@ pipeline {
 
   post {
     success {
-     message:'Successfully ran'
+     echo 'Successfully ran'
     }
-
     failure {
-       message:'pipeline failed'
+      mail to: 'team@example.com', subject: 'Build Failed', body: 'Check Jenkins logs.'
     }
-  }
+}
 }

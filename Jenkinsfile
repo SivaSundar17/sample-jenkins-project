@@ -33,6 +33,7 @@ pipeline {
       }
     }
   }
+  }
 
   post {
     success {
@@ -41,6 +42,5 @@ pipeline {
     failure {
       mail to: 'team@example.com', subject: 'Build Failed', body: 'Check Jenkins logs.'
     }
-}
 }
 }

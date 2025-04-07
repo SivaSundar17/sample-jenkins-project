@@ -10,7 +10,7 @@ pipeline {
     stage('Compile Java') {
       steps {
       // Compile Java file (adjust according to your project structure)
-        sh 'javac MyJavaFile.java' // Compiling your Java file
+        sh 'javac HelloWorld.java' // Compiling your Java file
       }
     }
 

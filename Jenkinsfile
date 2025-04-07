@@ -7,6 +7,12 @@ pipeline {
         echo'Building the application...'
       }
     }
+    stage('Compile Java') {
+      steps {
+      // Compile Java file (adjust according to your project structure)
+        sh 'javac MyJavaFile.java' // Compiling your Java file
+      }
+    }
 
     stage(test) {
       steps {

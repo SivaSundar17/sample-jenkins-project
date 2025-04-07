@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from repository
-                git 'https://your-repository-url.git'
+                git 'https://github.com/SivaSundar17/sample-jenkins-project.git'
             }
         }
     stage('Compile Java') {

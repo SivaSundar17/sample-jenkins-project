@@ -8,12 +8,12 @@ pipeline {
       }
     }
   stages {
-        stage('Checkout') {
-            steps {
-                // Checkout code from repository
-                git 'https://github.com/SivaSundar17/sample-jenkins-project.git'
-            }
-        }
+    stage('Checkout') {
+      steps {
+        // Checkout code from repository
+        git 'https://github.com/SivaSundar17/sample-jenkins-project.git'
+          }
+      }
     stage('Compile Java') {
       steps {
       // Compile Java file (adjust according to your project structure)

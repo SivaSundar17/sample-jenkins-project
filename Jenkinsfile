@@ -30,7 +30,22 @@ pipeline {
     
     stage(deploy) {
       steps {
-        echo 'Deploying the application...'
+        script {
+          if (params.ENV == 'dev') {
+            echo "Deploying to Development environment..."
+            // Example: simulate dev deploy
+            bat 'echo Deploying to DEV'
+          } else if (params.ENV == 'staging') {
+            echo "Deploying to Staging environment..."
+            // Example: simulate staging deploy
+            bat 'echo Deploying to STAGING'
+          } else if (params.ENV == 'prod') {
+            echo "Deploying to Production environment..."
+            // Example: simulate prod deploy
+            bat 'echo Deploying to PRODUCTION'
+          } else {
+            error "Invalid environment selected!"
+          }
       }
     }
   }

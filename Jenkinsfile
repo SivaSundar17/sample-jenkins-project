@@ -52,7 +52,7 @@ pipeline {
     }
     failure {
       echo 'Job failed'
-     mail to: 'shivalalitha17@gmail.com', subject: 'Build Failed', body: 'Check Jenkins logs.'
+     // mail to: 'shivalalitha17@gmail.com', subject: 'Build Failed', body: 'Check Jenkins logs.'
     }
 }
 }

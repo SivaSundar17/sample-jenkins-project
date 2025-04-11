@@ -1,7 +1,7 @@
 pipeline {
   agent any
     parameters {
-    choice(name: 'ENV', choices: ['dev', 'staging', 'prod'], description: 'Select environment to deploy')
+      choice(name: 'Staging', choices: ['Staging', 'Production'], description: 'Choose deployment environment')
   }
   stages {
     stage(build) {
@@ -31,19 +31,15 @@ pipeline {
     stage(deploy) {
       steps {
         script {
-          if (params.ENV == 'dev') {
-            echo "Deploying to Development environment..."
+          if (params.ENV == 'Staging') {
+            echo "Deploying to Staging environment..."
             // Example: simulate dev deploy
 
-          } else if (params.ENV == 'staging') {
+          } else if (params.ENV == 'Production') {
             echo "Deploying to Staging environment..."
-            // Example: simulate staging deploy
+            // Example: simulate Production deploy
     
-          } else if (params.ENV == 'prod') {
-            echo "Deploying to Production environment..."
-            // Example: simulate prod deploy
-
-          } else {
+          }  else {
             error "Invalid environment selected!"
           }
       }

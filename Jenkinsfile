@@ -51,8 +51,16 @@ pipeline {
      echo 'Successfully ran'
     }
     failure {
-      echo 'Job failed'
-     mail to: '2024tm93167@wilp.bits-pilani.ac.in', subject: 'Build Failed', body: 'Check Jenkins logs.'
+      script {
+        if (params.ENV == 'Staging') {
+        echo 'Job failed'
+       mail to: '2024tm93167@wilp.bits-pilani.ac.in', subject: 'Build Failed during deployment to Staging', body: 'Build Failed while deploying to Staging. Check Jenkins logs for more information.'
+      }
+      if (params.ENV == 'Staging') {
+        echo 'Job failed'
+       mail to: '2024tm93167@wilp.bits-pilani.ac.in', subject: 'Build Failed during deployment to Staging', body: 'Build Failed while deploying to Staging. Check Jenkins logs for more information.'
+      }
     }
+}
 }
 }

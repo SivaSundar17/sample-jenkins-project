@@ -56,7 +56,7 @@ pipeline {
         echo 'Job failed'
        mail to: '2024tm93167@wilp.bits-pilani.ac.in', subject: 'Build Failed during deployment to Staging', body: 'Build Failed while deploying to Staging. Check Jenkins logs for more information.'
       }
-      if (params.ENV == 'Staging') {
+      if (params.ENV == 'Production') {
         echo 'Job failed'
        mail to: '2024tm93167@wilp.bits-pilani.ac.in', subject: 'Build Failed during deployment to Production', body: 'Build Failed while deploying to Production. Check Jenkins logs for more information.'
       }

@@ -36,7 +36,7 @@ pipeline {
             // Example: simulate dev deploy
 
           } else if (params.ENV == 'Production') {
-            echo "Deploying to Staging environment..."
+            echo "Deploying to Production environment..."
             // Example: simulate Production deploy
     
           }  else {
